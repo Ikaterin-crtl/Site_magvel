@@ -1,0 +1,461 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #F5F5F5; /* Cor de fundo da página */
+    margin: 0;
+    padding: 0;
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'PP Rader', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos específicos para h1 e h2 */
+h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* Estilo para parágrafos e outros textos */
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Outros elementos de texto */
+a {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: #007BFF; /* Cor padrão para links */
+}
+
+a:hover {
+    color: #0056b3; /* Cor para links quando passa o mouse */
+}
+
+/* Estilo do cabeçalho */
+
+header {
+    background: #FFF;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 30px; /* Arredondamento do cabeçalho */
+    position: fixed;
+    width: calc(100% - 40px);
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo img {
+    height: 40px;
+}
+
+nav {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 25px; /* Arredondamento dos botões */
+    background-color: #FFF; /* Fundo dos botões */
+    transition: background 0.3s ease, color 0.3s ease;
+    
+}
+
+nav a:hover {
+    background-color: #F5FF7D; /* Verde limão */
+    color: #333; /* Cor do texto quando em hover */
+}
+
+.navbar {
+    display: flex;
+    gap: 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: #FFF;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #F5FF7D;
+    color: #333;
+}
+
+/* Menu hamburguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle div {
+    background-color: #333;
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Menu hamburguer - visível apenas em telas pequenas */
+@media (max-width: 768px) {
+    .navbar {
+        display: none; /* Oculta o menu de navegação padrão em telas pequenas */
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-active .navbar {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Ajuste conforme necessário */
+        right: 20px; /* Ajuste conforme necessário */
+        background-color: #FFF;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        border-radius: 8px;
+        width: 200px;
+    }
+
+    .menu-toggle.active div:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-toggle.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active div:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+
+
+
+/* Botões CTA */
+.cta-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.cta-button {
+    background: #F5FF7D; /* Verde limão */
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px; /* Arredondamento dos botões */
+    font-weight: bold;
+    transition: background 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.cta-button:hover {
+    background: #e0e0e0; /* Cor de fundo quando em hover */
+}
+
+/* Estilo do herói */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 20px;
+    background-color: #F5F5F5; /* Cor de fundo da página */
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Texto do hero */
+.hero-text {
+    max-width: 100%;
+    padding: 20px;
+}
+
+.hero-text h1, .hero-text h2 {
+    font-family: 'PP Rader', sans-serif; /* Fonte personalizada */
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-text h2 {
+    font-size: 1.5rem; /* Ajuste o tamanho do h2 conforme necessário */
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Imagem do hero */
+.hero-image {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px; /* Arredondamento das bordas da imagem */
+    display: block;
+    background-color: #F5F5F5; /* Cor de fundo da imagem */
+    object-fit: cover; /* Garante que a imagem se ajuste corretamente */
+}
+
+/* Serviços */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.service-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.service-button:hover {
+    background-color: #d0e02a; /* Cor verde mais escura no hover */
+    transform: scale(1.05); /* Leve aumento no hover */
+}
+
+.service-icon {
+    width: 50px; /* Ajuste o tamanho do ícone conforme necessário */
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.service-item h2 {
+    font-family: 'PP Rader', sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.service-item p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.hero-text_servicos {
+    margin: 10rem;
+    text-align: center;
+}
+
+#subtitulo {
+    margin-top: 3rem;
+}
+
+/* Estilo da seção de formulário de contato */
+.contact-form-section {
+    padding: 40px 20px;
+    background-color: #FFF; /* Fundo branco para a seção do formulário */
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 10rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título do formulário */
+.contact-form-section h1 {
+    font-family: 'PP Rader', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Estilo do formulário */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilo dos rótulos dos campos */
+.contact-form label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Estilo dos campos de entrada */
+.contact-form input, 
+.contact-form select, 
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus, 
+.contact-form select:focus, 
+.contact-form textarea:focus {
+    border-color: #F5FF7D; /* Cor do contorno ao focar */
+    outline: none;
+}
+
+/* Estilo do botão de envio */
+.cta-button {
+    background: #F5FF7D; /* Verde limão */
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #e0e0e0; /* Cor de fundo mais escura no hover */
+    transform: scale(1.05); /* Efeito de aumento no hover */
+}
+
+/* Carrossel */
+.carousel {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-item img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* Mídia queries */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        margin-top: 20px;
+    }
+
+    header {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1.2rem;
+    }
+
+    .contact-form-section {
+        padding: 20px;
+    }
+
+    .contact-form input, 
+    .contact-form select, 
+    .contact-form textarea {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
