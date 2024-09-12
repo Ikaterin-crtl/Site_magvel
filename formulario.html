@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Preencha o formulário de contato da Magvel para obter informações sobre nossos serviços de manutenção para veículos elétricos.">
-    <title>Magvel - Formulário de Contato</title>
+    <title>Magvel - Solicitação de Manutenção</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -31,8 +30,8 @@
 
     <main>
         <section class="contact-form-section">
-            <h1>Formulário de Contato</h1>
-            <form action="whatsapp_redirect.php" method="post" class="contact-form">
+            <h1>Solicitação de Manutenção</h1>
+            <form id="maintenanceForm" class="contact-form">
                 <label for="name">Nome:</label>
                 <input type="text" id="name" name="name" required placeholder="Seu nome completo">
 
@@ -57,9 +56,27 @@
                 <label for="message">Mensagem:</label>
                 <textarea id="message" name="message" rows="4" required placeholder="Digite sua mensagem aqui..."></textarea>
 
-                <button type="submit" class="cta-button">Enviar</button>
+                <button type="button" class="cta-button" onclick="sendToWhatsApp()">Enviar</button>
             </form>
         </section>
     </main>
+
+    <script>
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+
+            const messageContent = `Nome: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0ATelefone: ${encodeURIComponent(phone)}%0AServiço de Interesse: ${encodeURIComponent(service)}%0AMensagem: ${encodeURIComponent(message)}`;
+
+            const urlFlavio = `https://wa.me/5519983680292?text=${messageContent}`;
+            const urlMarco = `https://wa.me/5519983680308?text=${messageContent}`;
+
+            window.open(urlFlavio, '_blank');
+            window.open(urlMarco, '_blank');
+        }
+    </script>
 </body>
 </html>
