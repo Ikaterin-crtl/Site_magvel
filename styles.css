@@ -24,7 +24,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Estilos específicos para h1 e h2 */
 h1 {
-    
     font-size: 2.5em;
     font-weight: 600;
     line-height: 1.2;
@@ -43,7 +42,7 @@ p {
     line-height: 1.6;
 }
 
-/* Outros elementos de texto */
+/* Links */
 a {
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
@@ -55,7 +54,6 @@ a:hover {
 }
 
 /* Estilo do cabeçalho */
-
 header {
     background: #FFF;
     padding: 10px 20px;
@@ -77,6 +75,7 @@ header {
     height: 40px;
 }
 
+/* Navegação */
 nav {
     display: flex;
     gap: 10px; /* Espaçamento entre os botões */
@@ -91,32 +90,11 @@ nav a {
     border-radius: 25px; /* Arredondamento dos botões */
     background-color: #FFF; /* Fundo dos botões */
     transition: background 0.3s ease, color 0.3s ease;
-    
 }
 
 nav a:hover {
     background-color: #F5FF7D; /* Verde limão */
     color: #333; /* Cor do texto quando em hover */
-}
-
-.navbar {
-    display: flex;
-    gap: 10px;
-}
-
-.navbar a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    padding: 10px 20px;
-    border-radius: 25px;
-    background-color: #FFF;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.navbar a:hover {
-    background-color: #F5FF7D;
-    color: #333;
 }
 
 /* Menu hamburguer */
@@ -134,9 +112,8 @@ nav a:hover {
     transition: 0.3s;
 }
 
-/* Menu hamburguer - visível apenas em telas pequenas */
 @media (max-width: 768px) {
-    .navbar {
+    nav {
         display: none; /* Oculta o menu de navegação padrão em telas pequenas */
     }
 
@@ -144,7 +121,7 @@ nav a:hover {
         display: flex;
     }
 
-    .menu-active .navbar {
+    .menu-active nav {
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -170,30 +147,20 @@ nav a:hover {
     }
 }
 
-
-
-
 /* Botões CTA */
-.cta-buttons {
-    display: flex;
-    align-items: center;
-}
-
 .cta-button {
-    background: #F5FF7D; /* Verde limão */
+    background-color: #F5FF7D; /* Cor verde limão */
     color: #333;
     padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 25px; /* Arredondamento dos botões */
-    font-weight: bold;
-    transition: background 0.3s ease;
-    font-size: 0.9rem;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .cta-button:hover {
-    background: #e0e0e0; /* Cor de fundo quando em hover */
+    background-color: #333;
+    color: #FFF;
 }
-
 /* Estilo do herói */
 .hero {
     display: flex;
@@ -385,80 +352,114 @@ nav a:hover {
     background: #e0e0e0; /* Cor de fundo mais escura no hover */
     transform: scale(1.05); /* Efeito de aumento no hover */
 }
+/* Página 'Sobre Nós' */
+.about-us-section {
+    text-align: left;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-/* Carrossel */
+.about-us-section h1, .about-us-section h2 {
+    text-align: center;
+}
+
 .carousel {
-    position: relative;
-    max-width: 800px;
-    margin: auto;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
 }
 
 .carousel-inner {
     display: flex;
-    transition: transform 0.5s ease;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
 }
 
 .carousel-item {
     min-width: 100%;
-    transition: opacity 0.5s ease;
+    transition: transform 0.5s ease-in-out;
 }
 
-.carousel-item img {
+.carousel img {
     width: 100%;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
-/* Mídia queries */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
+.image-row {
+    margin-top: 8rem;
+    gap: 3rem;
+    display: flex;
+    justify-content: space-around; /* Ajusta o espaçamento entre as imagens */
+    align-items: center; /* Alinha as imagens verticalmente ao centro */
+  }
+  
+  .circular-image {
+    width: 300px; /* Defina o tamanho das imagens */
+    height: 300px; /* Defina o tamanho das imagens */
+    border-radius: 50%; /* Faz as imagens se tornarem circulares */
+    object-fit: cover; /* Garante que a imagem se ajuste bem ao círculo */
+  }
+  
+  @media (max-width: 768px) {
+    .circular-image {
+      width: 120px; /* Reduz o tamanho das imagens em telas menores */
+      height: 120px;
     }
+  }
+  
+  @media (max-width: 480px) {
+    .circular-image {
+      width: 90px; /* Reduz ainda mais o tamanho em telas muito pequenas */
+      height: 90px;
+    }
+  }
 
-    .hero-image {
-        margin-top: 20px;
-    }
-
-    header {
-        padding: 10px;
-        flex-direction: column;
-    }
-
-    nav {
-        flex-direction: column;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-    }
-
-    .services {
-        grid-template-columns: 1fr;
-    }
+/* Página de contato */
+.contact-section {
+    padding: 2rem;
+    text-align: center;
 }
 
-@media (max-width: 480px) {
-    .hero-text h1 {
-        font-size: 1.8rem;
-    }
+.contact-section h2 {
+    margin-bottom: 1.5rem;
+}
 
-    .hero-text h2 {
-        font-size: 1.2rem;
-    }
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
 
-    .contact-form-section {
-        padding: 20px;
-    }
+.contact-info ul li {
+    margin-bottom: 0.5rem;
+}
 
-    .contact-form input, 
-    .contact-form select, 
-    .contact-form textarea {
-        font-size: 0.9rem;
-    }
+.contact-info a {
+    display: inline-block;
+    margin-top: 1rem;
+}
 
-    .cta-button {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-    }
+.location iframe {
+    border: none;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: #FFF;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
 }

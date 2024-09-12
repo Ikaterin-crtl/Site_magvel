@@ -53,6 +53,15 @@
         </div>
     </div>
 
-   
+    <script src="script.js">
+    document.getElementById('menuToggle').addEventListener('click', function() {
+        var navbar = document.getElementById('navbar');
+        var menuToggle = document.getElementById('menuToggle');
+        navbar.classList.toggle('menu-active');
+        menuToggle.classList.toggle('active');
+    });</script>
+
+    
+    
 </body>
 </html>
