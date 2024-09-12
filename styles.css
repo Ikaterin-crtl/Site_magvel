@@ -97,55 +97,51 @@ nav a:hover {
     color: #333; /* Cor do texto quando em hover */
 }
 
-/* Menu hamburguer */
+/* Estilo do menu no desktop */
+.navbar {
+    display: flex;
+    gap: 15px;
+}
+
+/* Estilo do menu mobile (hambúrguer) */
 .menu-toggle {
     display: none;
-    flex-direction: column;
     cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .menu-toggle div {
-    background-color: #333;
-    height: 3px;
     width: 25px;
-    margin: 3px 0;
-    transition: 0.3s;
+    height: 3px;
+    background-color: #000;
 }
 
+/* Ocultar o menu no mobile */
 @media (max-width: 768px) {
-    nav {
-        display: none; /* Oculta o menu de navegação padrão em telas pequenas */
+    .navbar {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        padding: 15px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     }
 
+    /* Mostrar o ícone de hambúrguer */
     .menu-toggle {
         display: flex;
     }
 
-    .menu-active nav {
+    /* Estilo do menu aberto */
+    .navbar.active {
         display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 60px; /* Ajuste conforme necessário */
-        right: 20px; /* Ajuste conforme necessário */
-        background-color: #FFF;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 10px;
-        border-radius: 8px;
-        width: 200px;
-    }
-
-    .menu-toggle.active div:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .menu-toggle.active div:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle.active div:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
     }
 }
+
 
 /* Botões CTA */
 .cta-button {
