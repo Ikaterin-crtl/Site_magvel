@@ -448,6 +448,8 @@ nav a:hover {
     margin-top: 1rem;
 }
 
+
+
 /* Rodapé */
 footer {
     background-color: #333;
@@ -462,4 +464,24 @@ footer {
 footer p {
     margin: 0;
     font-size: 0.9rem;
+}
+
+.button-icon {
+    width: 1.5em; /* Ajusta o tamanho do ícone proporcionalmente ao texto */
+    height: auto;
+    margin-right: 0.5em; /* Espaço entre o ícone e o texto */
+}
+
+/* Media Queries para diferentes tamanhos de tela */
+
+@media (max-width: 768px) {
+    .cta-button {
+        padding: 8px 16px; /* Menos espaço em telas menores */
+        font-size: 0.9rem;
+    }
+
+    .button-icon {
+        width: 1.2em;
+        margin-right: 0.4em;
+    }
 }
