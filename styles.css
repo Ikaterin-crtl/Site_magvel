@@ -485,3 +485,37 @@ footer p {
         margin-right: 0.4em;
     }
 }
+
+.carrinho_botão{
+display: block;
+margin-top: 3rem;
+
+}
+
+.carrinho{
+    width: 100px; /* Ajuste o tamanho do ícone conforme necessário */
+    height: 100px;    
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1024px) {
+    .carrinho {
+        width: 80px; /* Reduz o tamanho do ícone em dispositivos maiores */
+        height: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carrinho {
+        width: 60px; /* Reduz o tamanho do ícone em tablets */
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carrinho {
+        width: 50px; /* Reduz o tamanho do ícone em smartphones */
+        height: 50px;
+    }
+}
