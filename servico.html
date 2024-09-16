@@ -9,6 +9,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PP+Rader:wght@400;600&display=swap" rel="stylesheet">   
+    <style>
+         /* Media Queries para responsividade */
+    @media (max-width: 768px) {
+      .map-container iframe, .form-container, .contact-info {
+        width: 100%;
+      }
+
+      input, textarea {
+        width: 90%;
+      }
+
+      button {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .map-container iframe {
+        height: 200px;
+      }
+    }
     </style>
 </head>
 
@@ -45,10 +66,12 @@
         <div class="service-item">
             <a href="formulario.html" class="service-button">
                 <img src="./imagens/Icons/manutenção_preventiva.gif" alt="Manutenção Preventiva" class="service-icon">
-                <h2>Manutenção Preventiva</h2>
+                <h2>Manutenção Preventiva e Corretiva</h2>
             </a>
-            <p>Garanta que seu veículo esteja sempre em ótimas condições com nossa manutenção preventiva especializada.</p>
+            <p>Garanta que seu veículo esteja sempre em ótimas condições com nossa manutenção especializada.</p>
         </div>
+
+        
 
         <div class="service-item">
             <a href="formulario.html" class="service-button">
@@ -98,7 +121,18 @@
             <p>Serviço de troca de pneus no local para maior conveniência e rapidez.</p>
         </div>
        
-    </main>
+        
+            <div class="service-item">
+                <a href="formulario.html" class="service-button">
+                    <img  src="./imagens/Icons/fomulario.gif" alt="Envie seu pedido de manutenção" class="carrinho">
+                    <h2>Envie seu pedido de manutenção</h2>
+                    <p>Entre em contato agora para uma manutenção especializada e assegure uma condução eficiente e segura.</p>
+                </a>                
+            </div>           
+
+          
+
+
 
 
 <script src="script.js"></script>  

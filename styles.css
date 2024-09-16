@@ -404,6 +404,7 @@ nav a:hover {
     margin-top: 3rem;
 }
 
+
 /* Estilos Responsivos */
 @media (max-width: 1200px) {
     .services {
@@ -643,6 +644,19 @@ nav a:hover {
 }
 
 
+/* Media Queries para telas maiores */
+@media (min-width: 768px) {
+    .map-container {
+        padding-bottom: 50%; /* Ajuste para telas maiores */
+    }
+}
+
+/* Media Queries para telas grandes */
+@media (min-width: 1200px) {
+    .map-container {
+        padding-bottom: 40%; /* Mais ajuste conforme o tamanho da tela */
+    }
+}
 
 /* Rodapé */
 footer {

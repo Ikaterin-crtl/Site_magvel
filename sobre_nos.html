@@ -10,7 +10,42 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PP+Rader:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">  
-    
+    <style>
+        /* Layout para telas maiores */
+        .image-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Exibe as imagens em 3 colunas */
+            gap: 20px;
+        }
+
+        .image-row img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%; /* Estilo circular */
+        }
+
+        /* Media Queries para tablets (largura até 768px) */
+        @media (max-width: 768px) {
+            .image-row {
+                grid-template-columns: 1fr; /* Exibe as imagens em uma única coluna */
+            }
+
+            .image-row img {
+                grid-column: 1 / -1; /* Faz com que as imagens ocupem toda a linha */
+            }
+        }
+
+        /* Media Queries para celulares (largura até 480px) */
+        @media (max-width: 480px) {
+            .image-row {
+                grid-template-columns: 1fr; /* Exibe as imagens em uma única coluna */
+            }
+
+            .image-row img {
+                grid-column: 1 / -1; /* Faz com que as imagens ocupem toda a linha */
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -55,3 +90,4 @@
 
     <script src="script.js"></script> 
 </body>
+</html>
