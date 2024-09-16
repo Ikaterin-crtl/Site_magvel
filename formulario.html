@@ -7,29 +7,28 @@
     <title>Magvel - Solicitação de Manutenção</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-         /* Media Queries para responsividade */
-    @media (max-width: 768px) {
-      .map-container iframe, .form-container, .contact-info {
-        width: 100%;
-      }
+        /* Media Queries para responsividade */
+        @media (max-width: 768px) {
+            .map-container iframe, .form-container, .contact-info {
+                width: 100%;
+            }
 
-      input, textarea {
-        width: 90%;
-      }
+            input, textarea {
+                width: 90%;
+            }
 
-      button {
-        width: 90%;
-      }
-    }
+            button {
+                width: 90%;
+            }
+        }
 
-    @media (max-width: 480px) {
-      .map-container iframe {
-        height: 200px;
-      }
-    }
+        @media (max-width: 480px) {
+            .map-container iframe {
+                height: 200px;
+            }
+        }
     </style>
 </head>
-
 
 <body>
     <header>
@@ -55,7 +54,7 @@
     <main>
         <section class="contact-form-section">
             <h1>Solicitação de Manutenção</h1>
-            <form id="maintenanceForm" class="contact-form">
+            <form id="maintenanceForm" class="contact-form" action="send_email.php" method="post">
                 <label for="name">Nome:</label>
                 <input type="text" id="name" name="name" required placeholder="Seu nome completo">
 
@@ -80,30 +79,11 @@
                 <label for="message">Mensagem:</label>
                 <textarea id="message" name="message" rows="4" required placeholder="Digite sua mensagem aqui..."></textarea>
 
-                <button type="button" class="cta-button" onclick="sendToWhatsApp()">Enviar</button>
+                <button type="submit" class="cta-button">Enviar</button>
             </form>
         </section>
     </main>
 
-    <script>
-        function sendToWhatsApp() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const service = document.getElementById('service').value;
-            const message = document.getElementById('message').value;
-
-            const messageContent = `Nome: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0ATelefone: ${encodeURIComponent(phone)}%0AServiço de Interesse: ${encodeURIComponent(service)}%0AMensagem: ${encodeURIComponent(message)}`;
-
-            const urlFlavio = `https://wa.me/5519983680292?text=${messageContent}`;
-            const urlMarco = `https://wa.me/5519983680308?text=${messageContent}`;
-
-            // Abrir URLs em novas abas
-            window.open(urlFlavio, '_blank');
-            window.open(urlMarco, '_blank');
-        }
-    </script>
-
-<script src="script.js"></script> 
+    <script src="script.js"></script> 
 </body>
 </html>
