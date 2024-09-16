@@ -6,6 +6,7 @@ body {
     background-color: #f0f0f0;
 }
 
+
 /* Header */
 header {
     display: flex;
@@ -37,6 +38,8 @@ header {
     color: #333;
     margin: 0 15px;
 }
+
+
 
 /* Serviços */
 .services {
@@ -95,6 +98,8 @@ header {
     background-color: #D0E02A;
 }
 
+
+
 /* Responsividade */
 @media (max-width: 768px) {
     .menu-toggle {
@@ -122,12 +127,16 @@ header {
 }
 
 
+
+
 /* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+
 
 /* Corpo da página */
 body {
@@ -138,6 +147,8 @@ body {
     padding: 0;
 }
 
+
+
 /* Títulos */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'PP Rader', sans-serif;
@@ -145,6 +156,8 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0;
     margin-top: 8rem;
 }
+
+
 
 /* Estilos específicos para h1 e h2 */
 h1 {
@@ -159,12 +172,16 @@ h2 {
     line-height: 1.3;
 }
 
+
+
 /* Estilo para parágrafos e outros textos */
 p {
     font-family: 'Poppins', sans-serif;
     font-size: 1em;
     line-height: 1.6;
 }
+
+
 
 /* Links */
 a {
@@ -173,9 +190,13 @@ a {
     color: #007BFF; /* Cor padrão para links */
 }
 
+
+
 a:hover {
     color: #0056b3; /* Cor para links quando passa o mouse */
 }
+
+
 
 /* Estilo do cabeçalho */
 header {
@@ -194,10 +215,14 @@ header {
     margin-bottom: 6rem;
 }
 
+
+
 /* Logo */
 .logo img {
     height: 40px;
 }
+
+
 
 /* Navegação */
 nav {
@@ -221,11 +246,15 @@ nav a:hover {
     color: #333; /* Cor do texto quando em hover */
 }
 
+
+
 /* Estilo do menu no desktop */
 .navbar {
     display: flex;
     gap: 15px;
 }
+
+
 
 /* Estilo do menu mobile (hambúrguer) */
 .menu-toggle {
@@ -240,6 +269,8 @@ nav a:hover {
     height: 3px;
     background-color: #000;
 }
+
+
 
 /* Ocultar o menu no mobile */
 @media (max-width: 768px) {
@@ -281,6 +312,8 @@ nav a:hover {
     background-color: #333;
     color: #FFF;
 }
+
+
 /* Estilo do herói */
 .hero {
     display: flex;
@@ -294,6 +327,7 @@ nav a:hover {
     flex-direction: column;
     text-align: center;
 }
+
 
 /* Texto do hero */
 .hero-text {
@@ -320,6 +354,8 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
+
+
 /* Imagem do hero */
 .hero-image {
     max-width: 100%;
@@ -334,6 +370,8 @@ nav a:hover {
     background-color: #F5F5F5; /* Cor de fundo da imagem */
     object-fit: cover; /* Garante que a imagem se ajuste corretamente */
 }
+
+
 
 /* Serviços */
 .services {
@@ -405,6 +443,7 @@ nav a:hover {
 }
 
 
+
 /* Estilos Responsivos */
 @media (max-width: 1200px) {
     .services {
@@ -473,6 +512,7 @@ nav a:hover {
     }
 }
 
+
 /* Estilo da seção de formulário de contato */
 .contact-form-section {
     padding: 40px 20px;
@@ -484,6 +524,8 @@ nav a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+
+
 /* Título do formulário */
 .contact-form-section h1 {
     font-family: 'PP Rader', sans-serif;
@@ -493,6 +535,8 @@ nav a:hover {
     color: #333;
 }
 
+
+
 /* Estilo do formulário */
 .contact-form {
     display: flex;
@@ -500,12 +544,16 @@ nav a:hover {
     gap: 15px;
 }
 
+
+
 /* Estilo dos rótulos dos campos */
 .contact-form label {
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     color: #333;
 }
+
+
 
 /* Estilo dos campos de entrada */
 .contact-form input, 
@@ -529,6 +577,8 @@ nav a:hover {
     outline: none;
 }
 
+
+
 /* Estilo do botão de envio */
 .cta-button {
     background: #F5FF7D; /* Verde limão */
@@ -547,6 +597,9 @@ nav a:hover {
     background: #e0e0e0; /* Cor de fundo mais escura no hover */
     transform: scale(1.05); /* Efeito de aumento no hover */
 }
+
+
+
 /* Página 'Sobre Nós' */
 .about-us-section {
     text-align: left;
@@ -612,7 +665,9 @@ nav a:hover {
     }
   }
 
-/* Página de contato */
+
+
+  /* Página de contato */
 .contact-section {
     padding: 2rem;
     text-align: center;
@@ -644,6 +699,8 @@ nav a:hover {
 }
 
 
+
+
 /* Media Queries para telas maiores */
 @media (min-width: 768px) {
     .map-container {
@@ -658,27 +715,6 @@ nav a:hover {
     }
 }
 
-/* Rodapé */
-footer {
-    background-color: #333;
-    color: #FFF;
-    text-align: center;
-    padding: 1rem 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.9rem;
-}
-
-.button-icon {
-    width: 1.5em; /* Ajusta o tamanho do ícone proporcionalmente ao texto */
-    height: auto;
-    margin-right: 0.5em; /* Espaço entre o ícone e o texto */
-}
 
 /* Media Queries para diferentes tamanhos de tela */
 
@@ -727,6 +763,7 @@ margin-top: 3rem;
         height: 50px;
     }
 }
+
 
 
 /* Estilos de cabeçalho */
@@ -803,6 +840,7 @@ header {
     border-color: #f44336;
   }
   
+
 
   /* Feedback Visual para Campos do Formulário */
 input:focus, textarea:focus {
