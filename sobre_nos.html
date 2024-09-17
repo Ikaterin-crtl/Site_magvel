@@ -45,6 +45,42 @@
                 grid-column: 1 / -1; /* Faz com que as imagens ocupem toda a linha */
             }
         }
+
+        .masonry-gallery {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+
+.masonry-grid {
+  column-count: 3;
+  column-gap: 10px;
+}
+
+.masonry-item {
+  margin-bottom: 10px;
+}
+
+.masonry-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+@media (max-width: 1200px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry-grid {
+    column-count: 1;
+  }
+}
+
+  
+
     </style>
 </head>
 
@@ -80,14 +116,25 @@
             <h2>Nossa História</h2>
             <p>Fundada com o objetivo de oferecer um serviço de manutenção de alto nível para veículos elétricos, a Magvel cresceu rapidamente e se tornou referência no setor. <br> Com uma equipe altamente qualificada e dedicada, estamos sempre à frente das tendências tecnológicas para garantir o melhor para nossos clientes.</p>
            
-            <div class="image-row">
-                <img src="./imagens/Blog/2.png" alt="Imagem 1" class="circular-image">
-                <img src="./imagens/Blog/3.png" alt="Imagem 2" class="circular-image">
-                <img src="./imagens/Blog/4.png" alt="Imagem 3" class="circular-image">                 
-            </div>
-        </section>
-    </main>
-
+           <!-- Galeria de Imagens em Alvenaria -->
+<section id="masonry-gallery" class="masonry-gallery">
+    <div class="container">
+      <h2>Galeria de Manutenções</h2>
+      <div class="masonry-grid">
+        <div class="masonry-item">
+          <img src="./imagens/Blog/1.png" alt="Imagem de Manutenção 1">
+        </div>
+        <div class="masonry-item">
+          <img src="./imagens/Blog/2.png" alt="Imagem de Manutenção 2">
+        </div>
+        <div class="masonry-item">
+          <img src="./imagens/Blog/3.png" alt="Imagem de Manutenção 3">
+        </div>
+        <!-- Adicione mais imagens conforme necessário -->
+      </div>
+    </div>
+  </section>
+  
     <script src="script.js"></script> 
 </body>
 </html>
