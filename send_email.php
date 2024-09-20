@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = $_POST['message'];
 
     // Configurações do email
-    $to = "seuemail@dominio.com"; // Substitua pelo seu email
+    $to = "contato@magvel.com.br"; 
     $subject = "Nova Solicitação de Manutenção";
     $body = "Nome: $name\nEmail: $email\nTelefone: $phone\nServiço: $service\nMensagem: $message";
     $headers = "From: $email";
