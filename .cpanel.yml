@@ -3,4 +3,4 @@ update:
   - type: git
     repository: "https://github.com/Ikaterin-crtl/Site_magvel.git"
     branch: "main"
-    directory: "/home/usuario/public_html"
+    directory: "/home2/magvel24/public_html"
