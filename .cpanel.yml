@@ -1,0 +1,6 @@
+version: 2
+update:
+  - type: git
+    repository: "https://github.com/Ikaterin-crtl/Site_magvel.git"
+    branch: "main"
+    directory: "/home/usuario/public_html"
