@@ -1,36 +1,23 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recupera os dados do formulário
-    $name = htmlspecialchars(trim($_POST['name']));
-    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
-    $phone = htmlspecialchars(trim($_POST['phone']));
-    $service = htmlspecialchars(trim($_POST['service']));
-    $message = htmlspecialchars(trim($_POST['message']));
+    // Captura os dados do formulário
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $service = $_POST['service'];
+    $message = $_POST['message'];
 
-    // Validações básicas
-    if (empty($name) || empty($email) || empty($service) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "Preencha todos os campos corretamente.";
-        exit;
-    }
+    // Configurações do email
+    $to = "seuemail@dominio.com"; // Substitua pelo seu email
+    $subject = "Nova Solicitação de Manutenção";
+    $body = "Nome: $name\nEmail: $email\nTelefone: $phone\nServiço: $service\nMensagem: $message";
+    $headers = "From: $email";
 
-    // Configurações do e-mail
-    $to = "contato@magvel.com.br";
-    $subject = "Nova Solicitação de Manutenção de: $name";
-    $body = "Nome: $name\n";
-    $body .= "E-mail: $email\n";
-    $body .= "Telefone: $phone\n";
-    $body .= "Serviço: $service\n";
-    $body .= "Mensagem: $message\n";
-
-    // Cabeçalhos do e-mail
-    $headers = "From: $name <$email>\r\n";
-    $headers .= "Reply-To: $email\r\n";
-
-    // Envia o e-mail
+    // Envio do email
     if (mail($to, $subject, $body, $headers)) {
         echo "Mensagem enviada com sucesso!";
     } else {
-        echo "Erro ao enviar a mensagem. Tente novamente mais tarde.";
+        echo "Falha ao enviar mensagem.";
     }
 } else {
     echo "Método de requisição inválido.";
