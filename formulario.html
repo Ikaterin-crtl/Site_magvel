@@ -85,6 +85,22 @@
         </section>
     </main>
 
+    <script>
+        document.getElementById('maintenanceForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+
+            const mailtoLink = `mailto:contato@magvel.com.br?subject=Nova Solicitação de Manutenção&body=Nome: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0ATelefone: ${encodeURIComponent(phone)}%0D%0AServiço: ${encodeURIComponent(service)}%0D%0AMensagem: ${encodeURIComponent(message)}`;
+
+            window.location.href = mailtoLink;
+        });
+    </script>
+
     <script src="script.js"></script> 
 </body>
 </html>
