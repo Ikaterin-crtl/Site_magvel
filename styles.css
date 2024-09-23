@@ -513,53 +513,38 @@ nav a:hover {
 }
 
 
-/* Estilo da seção de formulário de contato */
-.contact-form-section {
-    padding: 40px 20px;
-    background-color: #FFF; /* Fundo branco para a seção do formulário */
-    max-width: 800px;
-    margin: 0 auto;
-    margin-top: 10rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+/* Estilo do contêiner do formulário */
+.contact-form-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente se necessário */
+    flex-direction: column; /* Coloca os itens em coluna */
+    width: 100%; /* Largura total do contêiner */
+    margin-top: 8rem; /* Margem superior */
 }
-
-
-
-/* Título do formulário */
-.contact-form-section h1 {
-    font-family: 'PP Rader', sans-serif;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #333;
-}
-
-
 
 /* Estilo do formulário */
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 15px; /* Espaçamento entre os campos */
+    width: 70%; /* Largura do formulário */
 }
-
-
 
 /* Estilo dos rótulos dos campos */
 .contact-form label {
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     color: #333;
+    text-align: center; /* Centraliza o texto */
 }
-
-
 
 /* Estilo dos campos de entrada */
 .contact-form input, 
 .contact-form select, 
 .contact-form textarea {
-    width: 100%;
+    width: 100%; /* Largura total */
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -567,20 +552,20 @@ nav a:hover {
     font-size: 1rem;
     color: #333;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
 }
 
 .contact-form input:focus, 
 .contact-form select:focus, 
 .contact-form textarea:focus {
     border-color: #F5FF7D; /* Cor do contorno ao focar */
-    outline: none;
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 5px rgba(245, 255, 125, 0.5); /* Sombra ao focar */
 }
-
-
 
 /* Estilo do botão de envio */
 .cta-button {
+    width: 70%; /* Largura do botão */
     background: #F5FF7D; /* Verde limão */
     color: #333;
     padding: 10px 20px;
@@ -591,6 +576,8 @@ nav a:hover {
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease;
+    margin-left: auto; /* Centraliza o botão */
+    margin-right: auto; /* Centraliza o botão */
 }
 
 .cta-button:hover {
@@ -598,73 +585,160 @@ nav a:hover {
     transform: scale(1.05); /* Efeito de aumento no hover */
 }
 
+.cta-button:active {
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2); /* Efeito de pressionar no botão */
+}
+
+/* Estilo de erro para os campos */
+.contact-form input.error, 
+.contact-form select.error, 
+.contact-form textarea.error {
+    border-color: red; /* Cor de erro */
+    background-color: #ffe6e6; /* Fundo claro para erro */
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 90%; /* Largura maior em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form {
+        width: 95%; /* Largura ainda maior em telas muito pequenas */
+    }
+
+    .contact-form label {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte */
+    }
+
+    .contact-form input, 
+    .contact-form select, 
+    .contact-form textarea {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte dos campos */
+    }
+
+    .cta-button {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte do botão */
+    }
+}
 
 
-/* Página 'Sobre Nós' */
+
+
+/* Seção Sobre Nós */
 .about-us-section {
-    text-align: left;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.about-us-section h1, .about-us-section h2 {
+    margin: 4rem 0;
     text-align: center;
+    padding: 2rem 0;
+    border-bottom: 2px solid #f0f0f0;
+    display: flex; /* Mudança de grid para flex */
+    flex-direction: column; /* Alinha os itens verticalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
 }
 
-.carousel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.about-us-section h1,
+.about-us-section h2,
+.about-us-section p {
+    max-width: 700px; /* Define um limite máximo para o texto */
+    width: 70%; /* Garante que use toda a largura disponível */
+    margin: 0 auto; /* Centraliza os elementos */
+}
+
+.about-us-section h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-us-section h2 {
+    font-size: 1.5rem;
     margin-top: 2rem;
+    margin-bottom: 0.5rem;
 }
 
-.carousel-inner {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    max-width: 600px;
+/* Seção Masonry Gallery */
+.masonry-gallery {
+    padding: 50px 0;
+    background-color: #f9f9f9;
 }
 
-.carousel-item {
-    min-width: 100%;
-    transition: transform 0.5s ease-in-out;
+.masonry-grid {
+    display: flex; /* Utiliza flexbox */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    gap: 10px; /* Espaçamento entre os itens */
+    justify-content: center; /* Centraliza a galeria no contêiner */
 }
 
-.carousel img {
-    width: 100%;
-    border-radius: 15px;
+.masonry-item {
+    flex: 1 1 calc(33.33% - 10px); /* Distribuição das colunas em 3 */
+    margin-bottom: 10px;
+    max-width: 400px; /* Limite máximo de largura para cada item */
 }
 
+.masonry-item img {
+    width: 100%; /* Ocupar toda a largura do item */
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1200px) {
+    .masonry-item {
+        flex: 1 1 calc(50% - 10px); /* 2 colunas em telas menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .masonry-item {
+        flex: 1 1 100%; /* 1 coluna em telas ainda menores */
+    }
+}
+
+/* Seção Image Row */
 .image-row {
-    margin-top: 8rem;
-    gap: 3rem;
-    display: flex;
-    justify-content: space-around; /* Ajusta o espaçamento entre as imagens */
-    align-items: center; /* Alinha as imagens verticalmente ao centro */
-  }
-  
-  .circular-image {
-    width: 300px; /* Defina o tamanho das imagens */
-    height: 300px; /* Defina o tamanho das imagens */
-    border-radius: 50%; /* Faz as imagens se tornarem circulares */
-    object-fit: cover; /* Garante que a imagem se ajuste bem ao círculo */
-  }
-  
-  @media (max-width: 768px) {
-    .circular-image {
-      width: 120px; /* Reduz o tamanho das imagens em telas menores */
-      height: 120px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .circular-image {
-      width: 90px; /* Reduz ainda mais o tamanho em telas muito pequenas */
-      height: 90px;
-    }
-  }
+    display: flex; /* Utiliza flexbox */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    gap: 20px; /* Espaçamento entre os itens */
+}
 
+.image-row img {
+    width: 100px; /* Define um tamanho fixo para as imagens */
+    height: 100px; /* Tamanho fixo para manter a proporção */
+    border-radius: 50%; /* Formato circular */
+}
+
+@media (max-width: 768px) {
+    .image-row {
+        flex-direction: column; /* Disposição em coluna em telas menores */
+        align-items: center; /* Centraliza cada imagem */
+    }
+
+    .image-row img {
+        width: 80px; /* Tamanho reduzido em telas menores */
+        height: 80px; /* Mantém a proporção */
+    }
+}
+
+@media (max-width: 1200px) {
+    .masonry-item {
+        flex: 1 1 calc(50% - 10px); /* 2 colunas em telas menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .masonry-item {
+        flex: 1 1 100%; /* 1 coluna em telas ainda menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .image-row {
+        flex-direction: column; /* Exibe as imagens em uma única coluna */
+    }
+}
 
 
   /* Página de contato */

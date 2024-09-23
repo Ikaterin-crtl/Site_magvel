@@ -5,23 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Preencha o formulário de contato da Magvel para obter informações sobre nossos serviços de manutenção para veículos elétricos.">
     <title>Magvel - Solicitação de Manutenção</title>
-    <link rel="icon" href="/imagens/Logos/favicon.png" >
+    <link rel="icon" href="/imagens/Logos/favicon.png">
     <link rel="stylesheet" href="styles.css">
     
-
     <style>
         /* Media Queries para responsividade */
         @media (max-width: 768px) {
-            .map-container iframe, .form-container, .contact-info {
+            .map-container iframe, .contact-form, .contact-info {
                 width: 100%;
             }
 
             input, textarea {
-                width: 90%;
+                width: 100%;
+                box-sizing: border-box;
             }
 
             button {
-                width: 90%;
+                width: 100%;
+                box-sizing: border-box;
             }
         }
 
@@ -55,18 +56,17 @@
     </header>
     
     <main>
-        <section class="contact-form-section">
-            <h1>Solicitação de Manutenção</h1>
-            <form id="maintenanceForm" class="contact-form" action="send_email.php" method="post">
-                <label for="name">Nome:</label>
+        <div class="contact-form-container">
+            <form id="maintenanceForm" class="contact-form" action="mailto:contato@magvel.com.br" method="POST" enctype="text/plain">
+                <label for="name"></label>
                 <input type="text" id="name" name="name" required placeholder="Seu nome completo">
-
-                <label for="email">E-mail:</label>
+                
+                <label for="email"></label>
                 <input type="email" id="email" name="email" required placeholder="Seu e-mail">
-
-                <label for="phone">Telefone:</label>
+                
+                <label for="phone"></label>
                 <input type="tel" id="phone" name="phone" placeholder="Seu telefone">
-
+                
                 <label for="service">Serviço de Interesse:</label>
                 <select id="service" name="service" required>
                     <option value="" disabled selected>Selecione um serviço</option>
@@ -79,31 +79,16 @@
                     <option value="Manutenção em Freios e Suspensão">Manutenção em Freios e Suspensão</option>
                     <option value="Troca de Pneus">Troca de Pneus</option>
                 </select>
-
-                <label for="message">Mensagem:</label>
+                
+                <label for="message"></label>
                 <textarea id="message" name="message" rows="4" required placeholder="Digite sua mensagem aqui..."></textarea>
-
+                
                 <button type="submit" class="cta-button">Enviar</button>
             </form>
-        </section>
+        </div>
+        
     </main>
-
-    <script>
-        document.getElementById('maintenanceForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const service = document.getElementById('service').value;
-            const message = document.getElementById('message').value;
-
-            const mailtoLink = `mailto:contato@magvel.com.br?subject=Nova Solicitação de Manutenção&body=Nome: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0ATelefone: ${encodeURIComponent(phone)}%0D%0AServiço: ${encodeURIComponent(service)}%0D%0AMensagem: ${encodeURIComponent(message)}`;
-
-            window.location.href = mailtoLink;
-        });
-    </script>
-
-    <script src="script.js"></script> 
+    
+    <script src="script.js"></script>  
 </body>
 </html>
