@@ -31,3 +31,4 @@ document.querySelector('form').addEventListener('submit', function(event) {
         alert('Desculpe, houve um erro ao enviar o formulário. Tente novamente.');
     });
 });
+

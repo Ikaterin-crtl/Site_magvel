@@ -33,7 +33,6 @@
         }
     </style>
 </head>
-
 <body>
     <header>
         <div class="logo">
@@ -57,7 +56,8 @@
     
     <main>
         <div class="contact-form-container">
-            <form id="maintenanceForm" class="contact-form" action="mailto:contato@magvel.com.br" method="POST" enctype="text/plain">
+            <!-- Formulário configurado para enviar diretamente ao webhook do Make -->
+            <form id="maintenanceForm" class="contact-form" action="https://hook.us2.make.com/lhn865rv8r0bmn2xhp2v2sfct6p5451m" method="POST">
                 <label for="name"></label>
                 <input type="text" id="name" name="name" required placeholder="Seu nome completo">
                 
@@ -86,9 +86,6 @@
                 <button type="submit" class="cta-button">Enviar</button>
             </form>
         </div>
-        
     </main>
-    
-    <script src="script.js"></script>  
 </body>
 </html>
