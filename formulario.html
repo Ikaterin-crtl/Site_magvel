@@ -46,26 +46,5 @@
             </form>
         </div>
     </main>
-
-    <script>
-        document.getElementById('maintenanceForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Impede o envio padrão do formulário
-
-            const formData = new FormData(this); // Coleta os dados do formulário
-
-            fetch(this.action, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                // Aqui não precisamos fazer nada em relação à resposta
-                console.log('Formulário enviado com sucesso!'); // Opcional: log para depuração
-                this.reset(); // Limpa o formulário após o envio
-            })
-            .catch(error => {
-                console.error('Erro ao enviar o formulário:', error); // Opcional: log de erro
-            });
-        });
-    </script>
 </body>
 </html>
