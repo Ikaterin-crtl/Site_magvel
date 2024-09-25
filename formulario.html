@@ -110,7 +110,7 @@
         </nav>
     </header>
     
-    <main>
+    
         <div class="contact-form-container">
             <form id="maintenanceForm" class="contact-form" action="https://hook.us2.make.com/lhn865rv8r0bmn2xhp2v2sfct6p5451m" method="POST">
                 <input type="text" id="name" name="name" required placeholder="Seu nome completo">
@@ -134,52 +134,36 @@
                 
                 <button type="submit" class="cta-button">Enviar</button>
             </form>
-        </div>
-    </main>
-    <script>
-        document.getElementById('maintenanceForm').addEventListener('submit', function(event) {
-            // Impede o envio padrão do formulário
-            event.preventDefault();
+        </div>  
     
-            // Validação dos campos
-            let valid = true;
-            const inputs = this.querySelectorAll('input, select, textarea');
     
-            inputs.forEach(input => {
-                if (!input.checkValidity()) {
-                    valid = false;
-                    input.classList.add('error'); // Adiciona a classe de erro
-                } else {
-                    input.classList.remove('error'); // Remove a classe de erro
-                }
-            });
     
-            if (valid) {
-                // Coleta os dados do formulário
-                const formData = new FormData(this);
-                
-                // Envio AJAX
-                fetch(this.action, {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => {
-                    if (response.ok) {
-                        alert("Formulário enviado com sucesso!");
-                        this.reset(); // Reseta o formulário após o envio
-                    } else {
-                        alert("Erro ao enviar o formulário.");
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const form = document.getElementById('maintenanceForm');
+        
+                form.addEventListener('submit', function(event) {
+                    // Prevenir o envio do formulário se algum campo estiver vazio
+                    let valid = true;
+                    const inputs = form.querySelectorAll('input, select, textarea');
+        
+                    inputs.forEach(input => {
+                        if (!input.value) {
+                            valid = false;
+                            input.classList.add('error'); // Adiciona classe de erro
+                            input.style.borderColor = 'red'; // Muda a borda para vermelho
+                        } else {
+                            input.classList.remove('error'); // Remove a classe de erro
+                            input.style.borderColor = '#F5FF7D'; // Muda a borda para verde claro
+                        }
+                    });
+        
+                    if (!valid) {
+                        event.preventDefault(); // Impede o envio do formulário se houver campos inválidos
                     }
-                })
-                .catch(error => {
-                    console.error('Erro:', error);
-                    alert("Houve um problema ao enviar o formulário.");
                 });
-            }
-        });
-    </script>
-    
-    
-      
+            });
+        </script>
+             
 </body>
 </html>
