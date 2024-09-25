@@ -7,48 +7,6 @@
     <title>Magvel - Solicitação de Manutenção</title>
     <link rel="icon" href="/imagens/Logos/favicon.png">
     <link rel="stylesheet" href="styles.css">
-
-    <style>
-        /* Media Queries para responsividade */
-        @media (max-width: 768px) {
-            .map-container iframe, .contact-form, .contact-info {
-                width: 100%;
-            }
-
-            input, textarea {
-                width: 100%;
-                box-sizing: border-box;
-            }
-
-            button {
-                width: 100%;
-                box-sizing: border-box;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .map-container iframe {
-                height: 200px;
-            }
-        }
-    </style>
-    <script src="//code.jivosite.com/widget/qT5L6AKge3" async></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HL2E484LF"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-7HL2E484LF');
-    </script>
-    <script>
-        // Event snippet for Aumentar os contatos e orçamentos conversion page
-        gtag('event', 'conversion', {
-            'send_to': 'AW-10859304565/jZ8wCPC1vM8ZEPWsj7oo',
-            'value': 1.0,
-            'currency': 'BRL'
-        });
-    </script>
 </head>
 <body>
     <header>
@@ -57,11 +15,6 @@
         </div>
         <div class="cta-buttons">
             <a href="servico.html" class="cta-button">Explore Nossos Serviços</a>
-        </div>
-        <div class="menu-toggle" id="menuToggle">
-            <div></div>
-            <div></div>
-            <div></div>
         </div>
         <nav class="navbar" id="navbar">
             <a href="index.html">Home</a>
@@ -73,18 +26,10 @@
 
     <main>
         <div class="contact-form-container">
-            <!-- Formulário configurado para enviar diretamente ao webhook do Make -->
             <form id="maintenanceForm" class="contact-form" action="https://hook.us2.make.com/lhn865rv8r0bmn2xhp2v2sfct6p5451m" method="POST">
-                <label for="name"></label>
                 <input type="text" id="name" name="name" required placeholder="Seu nome completo">
-                
-                <label for="email"></label>
                 <input type="email" id="email" name="email" required placeholder="Seu e-mail">
-                
-                <label for="phone"></label>
                 <input type="tel" id="phone" name="phone" placeholder="Seu telefone">
-                
-                <label for="service">Serviço de Interesse:</label>
                 <select id="service" name="service" required>
                     <option value="" disabled selected>Selecione um serviço</option>
                     <option value="Manutenção Preventiva">Manutenção Preventiva</option>
@@ -96,19 +41,15 @@
                     <option value="Manutenção em Freios e Suspensão">Manutenção em Freios e Suspensão</option>
                     <option value="Troca de Pneus">Troca de Pneus</option>
                 </select>
-                
-                <label for="message"></label>
                 <textarea id="message" name="message" rows="4" required placeholder="Digite sua mensagem aqui..."></textarea>
-                
                 <button type="submit" class="cta-button">Enviar</button>
             </form>
         </div>
     </main>
 
     <script>
-        // Feedback de Envio do Formulário
         document.getElementById('maintenanceForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+            event.preventDefault(); // Impede o envio padrão do formulário
 
             const formData = new FormData(this); // Coleta os dados do formulário
 
@@ -117,19 +58,14 @@
                 body: formData
             })
             .then(response => {
-                if (response.ok) {
-                    alert('Obrigado por entrar em contato! Seu formulário foi enviado.');
-                    this.reset(); // Limpa o formulário após o envio
-                } else {
-                    alert('Desculpe, houve um erro ao enviar o formulário. Tente novamente.');
-                }
+                // Aqui não precisamos fazer nada em relação à resposta
+                console.log('Formulário enviado com sucesso!'); // Opcional: log para depuração
+                this.reset(); // Limpa o formulário após o envio
             })
             .catch(error => {
-                console.error('Erro:', error);
-                alert('Desculpe, houve um erro ao enviar o formulário. Tente novamente.');
+                console.error('Erro ao enviar o formulário:', error); // Opcional: log de erro
             });
         });
     </script>
-    <script src="script.js"></script> 
 </body>
 </html>
