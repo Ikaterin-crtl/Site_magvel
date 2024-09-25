@@ -155,9 +155,26 @@
             });
     
             if (valid) {
-                // Se todos os campos estiverem válidos, você pode enviar o formulário manualmente ou executar outra ação
-                alert("Formulário enviado com sucesso!"); // Exemplo de mensagem de sucesso
-                this.submit(); // Se quiser enviar o formulário
+                // Coleta os dados do formulário
+                const formData = new FormData(this);
+                
+                // Envio AJAX
+                fetch(this.action, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert("Formulário enviado com sucesso!");
+                        this.reset(); // Reseta o formulário após o envio
+                    } else {
+                        alert("Erro ao enviar o formulário.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                    alert("Houve um problema ao enviar o formulário.");
+                });
             }
         });
     </script>
