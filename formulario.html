@@ -136,7 +136,33 @@
             </form>
         </div>
     </main>
+    <script>
+        document.getElementById('maintenanceForm').addEventListener('submit', function(event) {
+            // Impede o envio padrão do formulário
+            event.preventDefault();
     
-    <script src="script.js"></script>  
+            // Validação dos campos
+            let valid = true;
+            const inputs = this.querySelectorAll('input, select, textarea');
+    
+            inputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    valid = false;
+                    input.classList.add('error'); // Adiciona a classe de erro
+                } else {
+                    input.classList.remove('error'); // Remove a classe de erro
+                }
+            });
+    
+            if (valid) {
+                // Se todos os campos estiverem válidos, você pode enviar o formulário manualmente ou executar outra ação
+                alert("Formulário enviado com sucesso!"); // Exemplo de mensagem de sucesso
+                this.submit(); // Se quiser enviar o formulário
+            }
+        });
+    </script>
+    
+    
+      
 </body>
 </html>
