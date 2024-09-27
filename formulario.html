@@ -139,25 +139,31 @@
     
     
         <script>
-            document.getElementById("contactForm").addEventListener("submit", function (event) {
-              event.preventDefault(); // Evita o envio tradicional
-          
-              var formData = new FormData(this); // Captura os dados do formulário
-          
-              // Envio via AJAX
-              fetch("URL_DO_SEU_WEBHOOK", {
-                method: "POST",
-                body: formData
-              })
-              .then(response => response.json()) // Processa a resposta JSON do webhook
-              .then(data => {
-                document.getElementById("responseMessage").innerHTML = data.message;
-              })
-              .catch(error => {
-                document.getElementById("responseMessage").innerHTML = "Erro ao enviar o formulário. Tente novamente.";
-              });
+            document.getElementById("maintenanceForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // Impede o envio tradicional do formulário
+        
+                var formData = new FormData(this);
+                
+                fetch("https://hook.us2.make.com/wika3d9y84ux3auhg4irt4pnekmufhts", {
+                    method: "POST",
+                    body: formData
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json(); // Processa a resposta como JSON
+                })
+                .then(data => {
+                    alert(data.message); // Exibe a mensagem de sucesso
+                    // Limpar o formulário se necessário
+                    this.reset();
+                })
+                .catch(error => {
+                    alert("Erro ao enviar o formulário. Tente novamente.");
+                });
             });
-          </script>
+        </script>
              
 </body>
 </html>
