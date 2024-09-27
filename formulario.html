@@ -141,25 +141,27 @@
         document.getElementById("phone").addEventListener("input", function(event) {
             // Remove todos os caracteres não numéricos
             let input = event.target.value.replace(/\D/g, '');
-
-            // Verifica se o número de telefone tem pelo menos 10 dígitos
-            if (input.length < 10) {
-                return event.target.value = input; // Apenas números
+    
+            // Aplica a máscara se o número for válido
+            if (input.length <= 10) {
+                const ddd = input.slice(0, 2);
+                const firstPart = input.slice(2, 7);
+                const secondPart = input.slice(7, 11);
+                
+                // Monta a máscara
+                let masked = `(${ddd}) ${firstPart ? '9 ' : ''}${firstPart}${secondPart ? '-' : ''}${secondPart}`;
+                event.target.value = masked.trim();
+            } else {
+                event.target.value = input; // Caso o número ultrapasse 10 dígitos, apenas mostra os números
             }
-
-            // Aplica a máscara
-            const ddd = input.slice(0, 2);
-            const firstPart = input.slice(2, 7);
-            const secondPart = input.slice(7, 11);
-            event.target.value = `(${ddd}) ${firstPart ? '9 ' : ''}${firstPart}${secondPart ? '-' : ''}${secondPart}`;
         });
-
+    
         // Envio do formulário
         document.getElementById("maintenanceForm").addEventListener("submit", function(event) {
             event.preventDefault(); // Impede o envio tradicional do formulário
-
+    
             var formData = new FormData(this);
-
+    
             fetch("https://hook.us2.make.com/wika3d9y84ux3auhg4irt4pnekmufhts", {
                 method: "POST",
                 body: formData
@@ -176,9 +178,10 @@
                 this.reset();
             })
             .catch(error => {
-                alert("Formulário enviado com sucesso!");
+                alert("Erro ao enviar o formulário: " + error.message);
             });
         });
     </script>
+    
 </body>
 </html>
