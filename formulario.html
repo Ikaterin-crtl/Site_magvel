@@ -154,31 +154,31 @@
             event.target.value = `(${ddd}) ${firstPart ? '9 ' : ''}${firstPart}${secondPart ? '-' : ''}${secondPart}`;
         });
 
-        // Envio do formulário
         document.getElementById("maintenanceForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Impede o envio tradicional do formulário
+    event.preventDefault(); // Impede o envio padrão do formulário
 
-            var formData = new FormData(this);
+    const formData = new FormData(this); // Coleta os dados do formulário
 
-            fetch("https://hook.us2.make.com/wika3d9y84ux3auhg4irt4pnekmufhts", {
-                method: "POST",
-                body: formData
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json(); // Processa a resposta como JSON
-            })
-            .then(data => {
-                alert(data.message); // Exibe a mensagem de sucesso
-                // Limpar o formulário se necessário
-                this.reset();
-            })
-            .catch(error => {
-                alert("Erro ao enviar o formulário. Tente novamente.");
-            });
-        });
+    fetch("https://hook.us2.make.com/wika3d9y84ux3auhg4irt4pnekmufhts", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Erro na resposta: " + response.statusText); // Lança um erro se a resposta não for OK
+        }
+        return response.json(); // Converte a resposta para JSON
+    })
+    .then(data => {
+        alert(data.message); // Mostra a mensagem da resposta do servidor
+        document.getElementById("maintenanceForm").reset(); // Limpa o formulário após o envio
+    })
+    .catch(error => {
+        console.error("Erro ao enviar o formulário:", error); // Loga o erro no console
+        alert("Erro ao enviar o formulário: " + error.message); // Mostra um alerta de erro
+    });
+});
+
     </script>
 </body>
 </html>
