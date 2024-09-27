@@ -139,31 +139,25 @@
     
     
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const form = document.getElementById('maintenanceForm');
-        
-                form.addEventListener('submit', function(event) {
-                    // Prevenir o envio do formulário se algum campo estiver vazio
-                    let valid = true;
-                    const inputs = form.querySelectorAll('input, select, textarea');
-        
-                    inputs.forEach(input => {
-                        if (!input.value) {
-                            valid = false;
-                            input.classList.add('error'); // Adiciona classe de erro
-                            input.style.borderColor = 'red'; // Muda a borda para vermelho
-                        } else {
-                            input.classList.remove('error'); // Remove a classe de erro
-                            input.style.borderColor = '#F5FF7D'; // Muda a borda para verde claro
-                        }
-                    });
-        
-                    if (!valid) {
-                        event.preventDefault(); // Impede o envio do formulário se houver campos inválidos
-                    }
-                });
+            document.getElementById("contactForm").addEventListener("submit", function (event) {
+              event.preventDefault(); // Evita o envio tradicional
+          
+              var formData = new FormData(this); // Captura os dados do formulário
+          
+              // Envio via AJAX
+              fetch("URL_DO_SEU_WEBHOOK", {
+                method: "POST",
+                body: formData
+              })
+              .then(response => response.json()) // Processa a resposta JSON do webhook
+              .then(data => {
+                document.getElementById("responseMessage").innerHTML = data.message;
+              })
+              .catch(error => {
+                document.getElementById("responseMessage").innerHTML = "Erro ao enviar o formulário. Tente novamente.";
+              });
             });
-        </script>
+          </script>
              
 </body>
 </html>
