@@ -111,59 +111,74 @@
     </header>
     
     
-        <div class="contact-form-container">
-            <form id="maintenanceForm" class="contact-form" action="https://hook.us2.make.com/wika3d9y84ux3auhg4irt4pnekmufhts" method="POST">
-                <input type="text" id="name" name="name" required placeholder="Seu nome completo">
-                <input type="email" id="email" name="email" required placeholder="Seu e-mail">
-                <input type="tel" id="phone" name="phone" placeholder="Seu telefone">
-                
-                <label for="service">Serviço de Interesse:</label>
-                <select id="service" name="service" required>
-                    <option value="" disabled selected>Selecione um serviço</option>
-                    <option value="Manutenção Preventiva">Manutenção Preventiva</option>
-                    <option value="Manutenção Corretiva">Manutenção Corretiva</option>
-                    <option value="Diagnóstico de Falhas">Diagnóstico de Falhas</option>
-                    <option value="Substituição de Baterias">Substituição de Baterias</option>
-                    <option value="Reparo de Motores Elétricos">Reparo de Motores Elétricos</option>
-                    <option value="Inspeções de Segurança">Inspeções de Segurança</option>
-                    <option value="Manutenção em Freios e Suspensão">Manutenção em Freios e Suspensão</option>
-                    <option value="Troca de Pneus">Troca de Pneus</option>
-                </select>
-                
-                <textarea id="message" name="message" rows="4" required placeholder="Digite sua mensagem aqui..."></textarea>
-                
-                <button type="submit" class="cta-button">Enviar</button>
-            </form>
-        </div>  
-    
-    
-    
-        <script>
-            document.getElementById("maintenanceForm").addEventListener("submit", function(event) {
-                event.preventDefault(); // Impede o envio tradicional do formulário
-        
-                var formData = new FormData(this);
-                
-                fetch("https://hook.us2.make.com/wika3d9y84ux3auhg4irt4pnekmufhts", {
-                    method: "POST",
-                    body: formData
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json(); // Processa a resposta como JSON
-                })
-                .then(data => {
-                    alert(data.message); // Exibe a mensagem de sucesso
-                    // Limpar o formulário se necessário
-                    this.reset();
-                })
-                .catch(error => {
-                    alert("Erro ao enviar o formulário. Tente novamente.");
-                });
+    <div class="contact-form-container">
+        <form id="maintenanceForm" class="contact-form" action="https://hook.us2.make.com/wika3d9y84ux3auhg4irt4pnekmufhts" method="POST">
+            <input type="text" id="name" name="name" required placeholder="Seu nome completo">
+            <input type="email" id="email" name="email" required placeholder="Seu e-mail">
+            <input type="tel" id="phone" name="phone" required placeholder="Seu telefone" maxlength="15">
+
+            <label for="service">Serviço de Interesse:</label>
+            <select id="service" name="service" required>
+                <option value="" disabled selected>Selecione um serviço</option>
+                <option value="Manutenção Preventiva">Manutenção Preventiva</option>
+                <option value="Manutenção Corretiva">Manutenção Corretiva</option>
+                <option value="Diagnóstico de Falhas">Diagnóstico de Falhas</option>
+                <option value="Substituição de Baterias">Substituição de Baterias</option>
+                <option value="Reparo de Motores Elétricos">Reparo de Motores Elétricos</option>
+                <option value="Inspeções de Segurança">Inspeções de Segurança</option>
+                <option value="Manutenção em Freios e Suspensão">Manutenção em Freios e Suspensão</option>
+                <option value="Troca de Pneus">Troca de Pneus</option>
+            </select>
+
+            <textarea id="message" name="message" rows="4" required placeholder="Digite sua mensagem aqui..."></textarea>
+
+            <button type="submit" class="cta-button">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        // Máscara para o campo de telefone
+        document.getElementById("phone").addEventListener("input", function(event) {
+            // Remove todos os caracteres não numéricos
+            let input = event.target.value.replace(/\D/g, '');
+
+            // Verifica se o número de telefone tem pelo menos 10 dígitos
+            if (input.length < 10) {
+                return event.target.value = input; // Apenas números
+            }
+
+            // Aplica a máscara
+            const ddd = input.slice(0, 2);
+            const firstPart = input.slice(2, 7);
+            const secondPart = input.slice(7, 11);
+            event.target.value = `(${ddd}) ${firstPart ? '9 ' : ''}${firstPart}${secondPart ? '-' : ''}${secondPart}`;
+        });
+
+        // Envio do formulário
+        document.getElementById("maintenanceForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio tradicional do formulário
+
+            var formData = new FormData(this);
+
+            fetch("https://hook.us2.make.com/wika3d9y84ux3auhg4irt4pnekmufhts", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json(); // Processa a resposta como JSON
+            })
+            .then(data => {
+                alert(data.message); // Exibe a mensagem de sucesso
+                // Limpar o formulário se necessário
+                this.reset();
+            })
+            .catch(error => {
+                alert("Erro ao enviar o formulário. Tente novamente.");
             });
-        </script>
-             
+        });
+    </script>
 </body>
 </html>
