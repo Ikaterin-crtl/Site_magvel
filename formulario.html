@@ -5,89 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Preencha o formulário de contato da Magvel para obter informações sobre nossos serviços de manutenção para veículos elétricos.">
     <title>Magvel - Solicitação de Manutenção</title>
-    <link rel="icon" href="/favicon.png" >
+
+    <!-- Favicon -->
+    <link rel="icon" href="icon_e60e7db3656f80a6f5b3e55dc2ad0edd.ico">
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
-    <style>        
 
-        .contact-form-container {
-            display: flex;
-            justify-content: center; /* Centraliza horizontalmente */
-            align-items: center; /* Centraliza verticalmente */
-            flex-direction: column; /* Coloca os itens em coluna */
-            width: 100%; /* Largura total da tela */
-            margin-top: 10rem; /* Margem superior */
-        }
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        /* Estilo do formulário */
-        .contact-form {
-            display: flex;
-            flex-direction: column; /* Coloca os campos em coluna */
-            gap: 15px; /* Espaçamento entre os campos */
-            width: 70%; /* Largura do formulário */
-            padding: 0 20px; /* Espaçamento lateral dentro do formulário */
-        }
+    <!-- Font Imports -->
+    <link href="https://fonts.googleapis.com/css2?family=PP+Rader:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-        /* Estilo dos campos de entrada */
-        .contact-form input, 
-        .contact-form select, 
-        .contact-form textarea {
-            width: 100%; /* Faz os campos ocupar 100% da largura do formulário */
-            padding: 10px; /* Espaçamento interno */
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            color: #333;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-            transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
-        }
+    
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HL2E484LF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7HL2E484LF');
+    </script>
 
-        /* Efeitos de foco nos campos */
-        .contact-form input:focus, 
-        .contact-form select:focus, 
-        .contact-form textarea:focus {
-            border-color: #F5FF7D; /* Cor do contorno ao focar */
-            outline: none; /* Remove o contorno padrão */
-            box-shadow: 0 0 5px rgba(245, 255, 125, 0.5); /* Sombra ao focar */
-        }
+    <!-- Event snippet for Aumentar os contatos e orçamentos conversion page -->
+    <script>
+      gtag('event', 'conversion', {
+          'send_to': 'AW-10859304565/jZ8wCPC1vM8ZEPWsj7oo',
+          'value': 1.0,
+          'currency': 'BRL'
+      });
+    </script>
 
-        /* Estilo do botão de envio */
-        .cta-button {
-            width: 100%; /* Largura do botão para ocupar 100% do formulário */
-            background: #F5FF7D; /* Verde limão */
-            color: #333;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: #e0e0e0; /* Cor de fundo mais escura no hover */
-            transform: scale(1.05); /* Efeito de aumento no hover */
-        }
-
-        .cta-button:active {
-            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2); /* Efeito de pressionar no botão */
-        }
-        
-
-        /* Media Queries para responsividade */
-        @media (max-width: 768px) {
-            .contact-form {
-                width: 90%; /* Largura maior em telas menores */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .contact-form {
-                width: 100%; /* Largura ainda maior em telas muito pequenas */
-            }
-        }
-    </style>
 </head>
+
 
 <body>
     <header>

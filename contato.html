@@ -5,14 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Descrição do seu site">
     <title>Magvel - Página Inicial</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="icon_e60e7db3656f80a6f5b3e55dc2ad0edd.ico">
+    
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">    
-    <link rel="icon" href="/favicon.png" >
+    
+    <!-- Preconnect for Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Font Imports -->
     <link href="https://fonts.googleapis.com/css2?family=PP+Rader:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> 
-   
-     
+    
+    <!-- Custom CSS for contact page and map -->
     <style>
         .contact-page {
             display: flex;
@@ -52,7 +60,6 @@
         .contact-form button:hover {
             background-color: #45a049;
         }
-        
 
         .phone-numbers {
             text-align: center;
@@ -66,21 +73,20 @@
 
         .phone-numbers a:hover {
             text-decoration: underline;
-        }     
-  
+        }
+
         .map-container {
             position: relative;
-            padding-bottom: 40%; /* Ajusta a altura do contêiner para aproximadamente 40% da largura */
+            padding-bottom: 40%; /* Adjusts height */
             height: 0;
             overflow: hidden;
-            border-radius: 12px; /* Bordas arredondadas */
-            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), 
-                        -4px -4px 8px rgba(255, 255, 255, 0.5) inset; /* Sombra lateral e interna */
+            border-radius: 12px;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.5) inset;
             margin-top: 20px;
             width: 100%;
-            max-width: 600px; /* Largura máxima em telas maiores */
-            margin-left: auto; /* Centraliza horizontalmente */
-            margin-right: auto; /* Centraliza horizontalmente */
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .map-container iframe {
@@ -90,47 +96,48 @@
             width: 100%;
             height: 100%;
             border: 0;
-            border-radius: 12px; /* Bordas arredondadas no iframe */
+            border-radius: 12px;
         }
 
-        /* Media Queries para responsividade */
+        /* Media Queries for Responsiveness */
         @media (max-width: 768px) {
             .map-container {
-                padding-bottom: 60%; /* Ajusta a altura do contêiner em telas menores */
-                width: 90%; /* Ajusta a largura para telas menores */
-                max-width: none; /* Remove a largura máxima para telas menores */
+                padding-bottom: 60%;
+                width: 90%;
+                max-width: none;
             }
         }
 
         @media (max-width: 480px) {
             .map-container {
-                padding-bottom: 80%; /* Ajusta a altura do contêiner em telas muito pequenas */
+                padding-bottom: 80%;
             }
         }
-        
     </style>
- <script src="//code.jivosite.com/widget/qT5L6AKge3" async></script>
-          <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7HL2E484LF">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-7HL2E484LF');
-</script> 
+    <!-- JivoSite Widget -->
+    <script src="//code.jivosite.com/widget/qT5L6AKge3" async></script>
 
-<!-- Event snippet for Aumentar os contatos e orçamentos conversion page -->
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-10859304565/jZ8wCPC1vM8ZEPWsj7oo',
-      'value': 1.0,
-      'currency': 'BRL'
-  });
-</script>
-    
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HL2E484LF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7HL2E484LF');
+    </script>
+
+    <!-- Event snippet for conversion tracking -->
+    <script>
+      gtag('event', 'conversion', {
+          'send_to': 'AW-10859304565/jZ8wCPC1vM8ZEPWsj7oo',
+          'value': 1.0,
+          'currency': 'BRL'
+      });
+    </script>
+
 </head>
+
 
 
 <body>

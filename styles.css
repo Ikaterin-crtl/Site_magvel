@@ -1,45 +1,157 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Geral */
 body {
     font-family: 'Source Sans Pro', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
+    color: #333;
+    background-color: #F5F5F5; /* Cor de fundo da página */
 }
 
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'PP Rader', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos específicos para h1 e h2 */
+h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-top: 8rem;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* Corpo da página */
+p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #007BFF; /* Cor padrão para links */
+}
+
+a:hover {
+    color: #0056b3; /* Cor para links quando passa o mouse */
+}
 
 /* Header */
 header {
+    background: #FFF;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: white;
+    border-radius: 30px; /* Arredondamento do cabeçalho */
+    position: fixed;
+    width: calc(100% - 40px);
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    margin-bottom: 6rem;
 }
 
 .logo img {
     height: 40px;
 }
 
+nav {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 25px; /* Arredondamento dos botões */
+    background-color: #FFF; /* Fundo dos botões */
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #F5FF7D; /* Verde limão */
+    color: #333; /* Cor do texto quando em hover */
+}
+
+/* Menu mobile (hambúrguer) */
 .menu-toggle {
     display: none;
-    flex-direction: column;
     cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .menu-toggle div {
     width: 25px;
     height: 3px;
-    background-color: #333;
-    margin: 5px;
+    background-color: #000;
 }
 
-.navbar a {
-    text-decoration: none;
-    color: #333;
-    margin: 0 15px;
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        padding: 15px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
 }
 
+/* Hero */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 20px;
+    background-color: #F5F5F5;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+}
 
+.hero-text {
+    max-width: 100%;
+    padding: 20px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px; /* Arredondamento das bordas da imagem */
+    object-fit: cover; /* Garante que a imagem se ajuste corretamente */
+}
 
 /* Serviços */
 .services {
@@ -78,12 +190,7 @@ header {
     color: #666;
 }
 
-/* Hero text */
-.hero-text_servicos {
-    text-align: center;
-    margin: 40px auto;
-}
-
+/* Botões CTA */
 .cta-button {
     display: inline-block;
     background-color: #F5FF7D;
@@ -98,426 +205,115 @@ header {
     background-color: #D0E02A;
 }
 
-
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
-
-    .navbar {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        background-color: white;
-        width: 100%;
-        top: 60px;
-        left: 0;
-    }
-
-    .navbar a {
-        padding: 10px;
-        border-bottom: 1px solid #eee;
-    }
-
-    .navbar.active {
-        display: flex;
-    }
+/* Seção Sobre Nós */
+.about-us-section {
+    margin: 4rem 0;
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 2px solid #f0f0f0;
 }
 
-
-
-
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.about-us-section h1,
+.about-us-section h2,
+.about-us-section p {
+    max-width: 700px;
 }
 
+/* Formulário */
+.contact-form-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    flex-direction: column; /* Coloca os itens em coluna */
+    width: 100%; /* Largura total da tela */
+    margin-top: 10rem; /* Margem superior */
+}
 
+/* Estilo do formulário */
+.contact-form {
+    display: flex;
+    flex-direction: column; /* Coloca os campos em coluna */
+    gap: 15px; /* Espaçamento entre os campos */
+    width: 70%; /* Largura do formulário */
+    padding: 0 20px; /* Espaçamento lateral dentro do formulário */
+}
 
-/* Corpo da página */
-body {
-    font-family: 'Poppins', sans-serif;
+/* Estilo dos campos de entrada */
+.contact-form input, 
+.contact-form select, 
+.contact-form textarea {
+    width: 100%; /* Faz os campos ocupar 100% da largura do formulário */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
     color: #333;
-    background-color: #F5F5F5; /* Cor de fundo da página */
-    margin: 0;
-    padding: 0;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
 }
 
-
-
-/* Títulos */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'PP Rader', sans-serif;
-    margin: 0;
-    padding: 0;
-    margin-top: 8rem;
+/* Efeitos de foco nos campos */
+.contact-form input:focus, 
+.contact-form select:focus, 
+.contact-form textarea:focus {
+    border-color: #F5FF7D; /* Cor do contorno ao focar */
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 5px rgba(245, 255, 125, 0.5); /* Sombra ao focar */
 }
 
-
-
-/* Estilos específicos para h1 e h2 */
-h1 {
-    font-size: 2.5em;
-    font-weight: 600;
-    line-height: 1.2;
-}
-
-h2 {
-    font-size: 2em;
-    font-weight: 600;
-    line-height: 1.3;
-}
-
-
-
-/* Estilo para parágrafos e outros textos */
-p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1em;
-    line-height: 1.6;
-}
-
-
-
-/* Links */
-a {
-    font-family: 'Poppins', sans-serif;
-    text-decoration: none;
-    color: #007BFF; /* Cor padrão para links */
-}
-
-
-
-a:hover {
-    color: #0056b3; /* Cor para links quando passa o mouse */
-}
-
-
-
-/* Estilo do cabeçalho */
-header {
-    background: #FFF;
-    padding: 10px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 30px; /* Arredondamento do cabeçalho */
-    position: fixed;
-    width: calc(100% - 40px);
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-    margin-bottom: 6rem;
-}
-
-
-
-/* Logo */
-.logo img {
-    height: 40px;
-}
-
-
-
-/* Navegação */
-nav {
-    display: flex;
-    gap: 10px; /* Espaçamento entre os botões */
-}
-
-nav a {
-    display: inline-block;
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    padding: 10px 20px;
-    border-radius: 25px; /* Arredondamento dos botões */
-    background-color: #FFF; /* Fundo dos botões */
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-nav a:hover {
-    background-color: #F5FF7D; /* Verde limão */
-    color: #333; /* Cor do texto quando em hover */
-}
-
-
-
-/* Estilo do menu no desktop */
-.navbar {
-    display: flex;
-    gap: 15px;
-}
-
-
-
-/* Estilo do menu mobile (hambúrguer) */
-.menu-toggle {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.menu-toggle div {
-    width: 25px;
-    height: 3px;
-    background-color: #000;
-}
-
-
-
-/* Ocultar o menu no mobile */
-@media (max-width: 768px) {
-    .navbar {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        background-color: #fff;
-        position: absolute;
-        top: 60px;
-        right: 10px;
-        padding: 15px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Mostrar o ícone de hambúrguer */
-    .menu-toggle {
-        display: flex;
-    }
-
-    /* Estilo do menu aberto */
-    .navbar.active {
-        display: flex;
-    }
-}
-
-
-/* Botões CTA */
+/* Estilo do botão de envio */
 .cta-button {
-    background-color: #F5FF7D; /* Cor verde limão */
+    width: 100%; /* Largura do botão para ocupar 100% do formulário */
+    background: #F5FF7D; /* Verde limão */
     color: #333;
     padding: 10px 20px;
-    border-radius: 25px;
-    font-weight: 600;
-    transition: background 0.3s ease, color 0.3s ease;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: #333;
-    color: #FFF;
+    background: #e0e0e0; /* Cor de fundo mais escura no hover */
+    transform: scale(1.05); /* Efeito de aumento no hover */
 }
 
+.cta-button:active {
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2); /* Efeito de pressionar no botão */
+}
 
-/* Estilo do herói */
-.hero {
+/* Contato */
+.contact-info {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 50px 20px;
-    background-color: #F5F5F5; /* Cor de fundo da página */
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    flex-direction: column;
-    text-align: center;
-}
-
-
-/* Texto do hero */
-.hero-text {
-    max-width: 100%;
     padding: 20px;
 }
 
-.hero-text h1, .hero-text h2 {
-    font-family: 'PP Rader', sans-serif; /* Fonte personalizada */
-}
-
-.hero-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.hero-text h2 {
-    font-size: 1.5rem; /* Ajuste o tamanho do h2 conforme necessário */
-    margin-bottom: 20px;
-}
-
-.hero-text p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-
-
-/* Imagem do hero */
-.hero-image {
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.hero-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px; /* Arredondamento das bordas da imagem */
-    display: block;
-    background-color: #F5F5F5; /* Cor de fundo da imagem */
-    object-fit: cover; /* Garante que a imagem se ajuste corretamente */
-}
-
-
-
-/* Serviços */
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+.contact-info div {
+    flex: 1;
+    margin: 10px;
     padding: 20px;
-}
-
-.service-item {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
+    background-color: white;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.service-item:hover {
-    transform: translateY(-10px); /* Leve elevação ao passar o mouse */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.service-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: inherit;
-    border: none;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 10px;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.service-button:hover {
-    background-color: #d0e02a; /* Cor verde mais escura no hover */
-    transform: scale(1.05); /* Leve aumento no hover */
-}
-
-.service-icon {
-    width: 50px; /* Ajuste o tamanho do ícone conforme necessário */
-    height: 50px;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.service-item h2 {
-    font-family: 'PP Rader', sans-serif;
-    font-weight: 600;
-    font-size: 1.5em;
-    margin: 0;
-}
-
-.service-item p {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 1em;
-}
-
-.hero-text_servicos {
-    margin: 10rem;
-    text-align: center;
-}
-
-#subtitulo {
-    margin-top: 3rem;
-}
-
-
-
-/* Estilos Responsivos */
-@media (max-width: 1200px) {
-    .services {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajusta para colunas menores em telas médias */
-    }
-
-    .hero-text_servicos {
-        margin: 5rem;
-    }
-
-    .service-item h2 {
-        font-size: 1.3em;
-    }
-
-    .service-item p {
-        font-size: 0.9em;
-    }
-}
-
+/* Responsividade */
 @media (max-width: 768px) {
     .services {
-        grid-template-columns: 1fr; /* Em telas menores, exibe uma coluna */
+        grid-template-columns: 1fr; /* Exibe uma coluna em telas menores */
     }
 
-    .hero-text_servicos {
-        margin: 3rem;
+    .contact-info {
+        flex-direction: column; /* Muda para coluna em telas menores */
     }
 
-    .service-item {
-        padding: 15px;
-    }
-
-    .service-item h2 {
-        font-size: 1.2em;
-    }
-
-    .service-item p {
-        font-size: 0.85em;
-    }
-
-    .service-button {
-        padding: 10px;
-    }
-
-    .service-icon {
-        width: 40px;
-        height: 40px;
+    .contact-info div {
+        margin: 10px 0;
     }
 }
-
-@media (max-width: 480px) {
-    .hero-text_servicos {
-        margin: 2rem;
-    }
-
-    .service-item h2 {
-        font-size: 1.1em;
-    }
-
-    .service-item p {
-        font-size: 0.8em;
-    }
-
-    .service-button {
-        padding: 8px;
-    }
-}
-
-
-
-
-
-
-
 
 /* Seção Sobre Nós */
 .about-us-section {
@@ -535,277 +331,83 @@ nav a:hover {
 .about-us-section h2,
 .about-us-section p {
     max-width: 700px; /* Define um limite máximo para o texto */
-    width: 70%; /* Garante que use toda a largura disponível */
-    margin: 0 auto; /* Centraliza os elementos */
+    width: 100%; /* Garante que o texto ocupe toda a largura disponível */
+    margin: 0 auto; /* Centraliza os textos */
 }
 
 .about-us-section h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2.5em; /* Tamanho do título principal */
+    margin-bottom: 1rem; /* Espaçamento inferior */
+    font-family: 'PP Rader', sans-serif; /* Fonte personalizada */
 }
 
 .about-us-section h2 {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
+    font-size: 2em; /* Tamanho do subtítulo */
+    margin-bottom: 1rem; /* Espaçamento inferior */
+    font-family: 'Source Sans Pro', sans-serif; /* Fonte padrão */
 }
 
-/* Seção Masonry Gallery */
-.masonry-gallery {
-    padding: 50px 0;
-    background-color: #f9f9f9;
+.about-us-section p {
+    font-size: 1.2em; /* Tamanho do parágrafo */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    color: #666; /* Cor do texto */
 }
 
-.masonry-grid {
-    display: flex; /* Utiliza flexbox */
-    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-    gap: 10px; /* Espaçamento entre os itens */
-    justify-content: center; /* Centraliza a galeria no contêiner */
+/* Estilo dos membros da equipe */
+.team-member {
+    display: flex; /* Exibe membros em linha */
+    flex-direction: column; /* Alinha informações em coluna */
+    align-items: center; /* Centraliza os itens */
+    margin: 20px; /* Espaçamento entre membros */
+    max-width: 250px; /* Largura máxima do cartão do membro */
+    background-color: #fff; /* Fundo branco */
+    border-radius: 10px; /* Borda arredondada */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 15px; /* Espaçamento interno */
+    transition: transform 0.3s, box-shadow 0.3s; /* Efeitos de transição */
 }
 
-.masonry-item {
-    flex: 1 1 calc(33.33% - 10px); /* Distribuição das colunas em 3 */
-    margin-bottom: 10px;
-    max-width: 400px; /* Limite máximo de largura para cada item */
+.team-member:hover {
+    transform: translateY(-5px); /* Leve elevação ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
 }
 
-.masonry-item img {
-    width: 100%; /* Ocupar toda a largura do item */
-    height: auto;
-    display: block;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.team-member img {
+    border-radius: 50%; /* Imagem circular */
+    width: 100px; /* Largura da imagem */
+    height: 100px; /* Altura da imagem */
+    object-fit: cover; /* Ajuste da imagem */
+    margin-bottom: 15px; /* Espaçamento inferior */
 }
 
-@media (max-width: 1200px) {
-    .masonry-item {
-        flex: 1 1 calc(50% - 10px); /* 2 colunas em telas menores */
-    }
+.team-member h3 {
+    font-family: 'PP Rader', sans-serif; /* Fonte personalizada */
+    font-size: 1.5em; /* Tamanho do nome */
+    margin-bottom: 5px; /* Espaçamento inferior */
 }
 
+.team-member p {
+    font-family: 'Source Sans Pro', sans-serif; /* Fonte padrão */
+    font-size: 1em; /* Tamanho da descrição */
+    text-align: center; /* Centraliza o texto */
+    color: #666; /* Cor do texto */
+}
+
+/* Estilos Responsivos para a seção Sobre Nós */
 @media (max-width: 768px) {
-    .masonry-item {
-        flex: 1 1 100%; /* 1 coluna em telas ainda menores */
-    }
-}
-
-/* Seção Image Row */
-.image-row {
-    display: flex; /* Utiliza flexbox */
-    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-    gap: 20px; /* Espaçamento entre os itens */
-}
-
-.image-row img {
-    width: 100px; /* Define um tamanho fixo para as imagens */
-    height: 100px; /* Tamanho fixo para manter a proporção */
-    border-radius: 50%; /* Formato circular */
-}
-
-@media (max-width: 768px) {
-    .image-row {
-        flex-direction: column; /* Disposição em coluna em telas menores */
-        align-items: center; /* Centraliza cada imagem */
+    .team-member {
+        max-width: 100%; /* Permite que o cartão ocupe 100% em telas menores */
     }
 
-    .image-row img {
-        width: 80px; /* Tamanho reduzido em telas menores */
-        height: 80px; /* Mantém a proporção */
-    }
-}
-
-@media (max-width: 1200px) {
-    .masonry-item {
-        flex: 1 1 calc(50% - 10px); /* 2 colunas em telas menores */
-    }
-}
-
-@media (max-width: 768px) {
-    .masonry-item {
-        flex: 1 1 100%; /* 1 coluna em telas ainda menores */
-    }
-}
-
-@media (max-width: 768px) {
-    .image-row {
-        flex-direction: column; /* Exibe as imagens em uma única coluna */
-    }
-}
-
-
-  /* Página de contato */
-.contact-section {    
-    text-align: center;
-}
-
-.contact-section h2 {
-    margin-bottom: 1.5rem;
-}
-
-.contact-info ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
-}
-
-.contact-info ul li {
-    margin-bottom: 0.5rem;
-}
-
-.contact-info a {
-    display: inline-block;
-    margin-top: 1rem;
-}
-
-
-/* Media Queries para telas maiores */
-@media (min-width: 768px) {
-    .map-container {
-        padding-bottom: 50%; /* Ajuste para telas maiores */
-    }
-}
-
-/* Media Queries para telas grandes */
-@media (min-width: 1200px) {
-    .map-container {
-        padding-bottom: 40%; /* Mais ajuste conforme o tamanho da tela */
-    }
-}
-
-
-/* Media Queries para diferentes tamanhos de tela */
-
-@media (max-width: 768px) {
-    .cta-button {
-        padding: 8px 16px; /* Menos espaço em telas menores */
-        font-size: 0.9rem;
+    .about-us-section h1 {
+        font-size: 2em; /* Reduz o tamanho do título principal */
     }
 
-    .button-icon {
-        width: 1.2em;
-        margin-right: 0.4em;
+    .about-us-section h2 {
+        font-size: 1.5em; /* Reduz o tamanho do subtítulo */
+    }
+
+    .about-us-section p {
+        font-size: 1em; /* Reduz o tamanho do parágrafo */
     }
 }
-
-.carrinho_botão{
-display: block;
-margin-top: 3rem;
-
-}
-
-.carrinho{
-    width: 100px; /* Ajuste o tamanho do ícone conforme necessário */
-    height: 100px;    
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-@media (max-width: 1024px) {
-    .carrinho {
-        width: 80px; /* Reduz o tamanho do ícone em dispositivos maiores */
-        height: 80px;
-    }
-}
-
-@media (max-width: 768px) {
-    .carrinho {
-        width: 60px; /* Reduz o tamanho do ícone em tablets */
-        height: 60px;
-    }
-}
-
-@media (max-width: 480px) {
-    .carrinho {
-        width: 50px; /* Reduz o tamanho do ícone em smartphones */
-        height: 50px;
-    }
-}
-
-
-
-/* Estilos de cabeçalho */
-header {
-    background-color: white; /* Cor original do cabeçalho */
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  /* Animação de carregamento */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .fade-in {
-    animation: fadeIn 1s ease-out;
-  }
-  
-  .delay {
-    animation-delay: 0.5s;
-  }
-  
-  /* Estilos do botão */
-  .button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px 2px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    transform: scale(1.05);
-    background-color: #45a049;
-  }
-  
-  .button:focus {
-    outline: 2px solid #F5FF7D;
-    outline-offset: 2px;
-  }
-  
-  .button:active {
-    background-color: #3e8e41;
-    transform: scale(0.98);
-  }
-  
-  /* Estilos de formulário */
-  input:focus, textarea:focus {
-    border-color: #F5FF7D;
-    box-shadow: 0 0 0 2px rgba(245, 255, 125, 0.5);
-    outline: none;
-  }
-  
-  input:valid, textarea:valid {
-    border-color: #4CAF50;
-  }
-  
-  input:invalid, textarea:invalid {
-    border-color: #f44336;
-  }
-  
-
-
-  /* Feedback Visual para Campos do Formulário */
-input:focus, textarea:focus {
-    border-color: #4CAF50; /* Cor verde quando o campo está em foco */
-    box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); /* Sombra verde ao redor do campo */
-  }
-  
-  input:invalid, textarea:invalid {
-    border-color: #F44336; /* Cor vermelha para campos inválidos */
-  }
-  
